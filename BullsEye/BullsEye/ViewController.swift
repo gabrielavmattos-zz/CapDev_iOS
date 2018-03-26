@@ -17,12 +17,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         sliderCurrentValue = lroundf(sliderGame.value)
         targetValue = getNumberRandom();
-        
         numberRandomLabel.text = "\(targetValue)";
-        
-        // Do any additional setup after loading the view, typically from a nib.
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +53,7 @@ class ViewController: UIViewController {
     
     func startNewRound () {
         targetValue = getNumberRandom()
+        numberRandomLabel.text = "\(targetValue)";
         sliderCurrentValue = 50
         sliderGame.value = Float(sliderCurrentValue)
     }
