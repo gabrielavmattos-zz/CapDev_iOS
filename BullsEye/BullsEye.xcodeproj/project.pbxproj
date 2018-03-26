@@ -15,6 +15,7 @@
 		A74D050E2069245900698CAA /* BullsEyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D050D2069245900698CAA /* BullsEyeTests.swift */; };
 		A74D05192069245900698CAA /* BullsEyeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D05182069245900698CAA /* BullsEyeUITests.swift */; };
 		A74D05272069703B00698CAA /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D05262069703B00698CAA /* AboutViewController.swift */; };
+		A74D052920697EF900698CAA /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = A74D052820697EF900698CAA /* BullsEye.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A74D05182069245900698CAA /* BullsEyeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeUITests.swift; sourceTree = "<group>"; };
 		A74D051A2069245900698CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A74D05262069703B00698CAA /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A74D052820697EF900698CAA /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = "../../iOS_Apprentice_v6.0/getting-started/Resources/BullsEye.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		A74D04F72069245900698CAA /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				A74D052820697EF900698CAA /* BullsEye.html */,
 				A74D04F82069245900698CAA /* AppDelegate.swift */,
 				A74D04FA2069245900698CAA /* ViewController.swift */,
 				A74D04FC2069245900698CAA /* Main.storyboard */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A74D05032069245900698CAA /* LaunchScreen.storyboard in Resources */,
+				A74D052920697EF900698CAA /* BullsEye.html in Resources */,
 				A74D05002069245900698CAA /* Assets.xcassets in Resources */,
 				A74D04FE2069245900698CAA /* Main.storyboard in Resources */,
 			);
