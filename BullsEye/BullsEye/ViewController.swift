@@ -10,52 +10,81 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var sliderGame: UISlider!
+    @IBOutlet weak var gameSlider: UISlider!
     @IBOutlet weak var numberRandomLabel: UILabel!
+    @IBOutlet weak var amountRoundLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     var sliderCurrentValue: Int = 0
     var targetValue: Int = 0
+    var rounds = 0
+    var totalScore: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sliderCurrentValue = lroundf(sliderGame.value)
-        targetValue = getNumberRandom();
-        numberRandomLabel.text = "\(targetValue)";
-    
+        startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func showAlert(_ sender: UIButton) {
+        let roundScore = calculateStore()
+        totalScore = totalScore + roundScore
         let message = "The value of the slider is: \(sliderCurrentValue)" +
-        "\nThe target value is: \(targetValue)"
-        
+        "\nThe target value is: \(targetValue).\nTotal score is: \(roundScore)"
         let alert = UIAlertController(title: "Hello Word!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
-        let action = UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: nil)
+        let action = UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: { action in
+                self.startNewRound()
+        }) // -> Closure
+        
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-        startNewRound()
+
     }
     
     @IBAction func sliderMoved(_ sender: Any) {
-        sliderCurrentValue = lroundf(sliderGame.value)
+        sliderCurrentValue = lroundf(gameSlider.value)
         print("The value is \(sliderCurrentValue)")
     }
     
+    @IBAction func startOverButtonAction(_ sender: Any) {
+        startNewGame()
+    }
+    
+    func startNewGame() {
+        rounds = 0
+        totalScore = 0
+        startNewRound()
+    }
+    
     func getNumberRandom() -> Int {
+        // arc4random -> gera número de 0 a 99.
         return 1 + Int(arc4random_uniform(100))
     }
     
-    func startNewRound () {
+    func startNewRound() {
+        rounds = rounds + 1
         targetValue = getNumberRandom()
-        numberRandomLabel.text = "\(targetValue)";
         sliderCurrentValue = 50
-        sliderGame.value = Float(sliderCurrentValue)
+        updateFieldsUI()
     }
+    
+    func updateFieldsUI() {
+        numberRandomLabel.text = String(targetValue)
+        amountRoundLabel.text = String(rounds)
+        gameSlider.value = Float(sliderCurrentValue)
+        scoreLabel.text = String(totalScore)
+    }
+    
+    func calculateStore() -> Int {
+        let score = abs(targetValue - sliderCurrentValue)
+        
+        return 100 - score
+    }
+    
 }
 

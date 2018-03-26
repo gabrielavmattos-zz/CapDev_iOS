@@ -14,6 +14,7 @@
 		A74D05032069245900698CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74D05012069245900698CAA /* LaunchScreen.storyboard */; };
 		A74D050E2069245900698CAA /* BullsEyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D050D2069245900698CAA /* BullsEyeTests.swift */; };
 		A74D05192069245900698CAA /* BullsEyeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D05182069245900698CAA /* BullsEyeUITests.swift */; };
+		A74D05272069703B00698CAA /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D05262069703B00698CAA /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A74D05142069245900698CAA /* BullsEyeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74D05182069245900698CAA /* BullsEyeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeUITests.swift; sourceTree = "<group>"; };
 		A74D051A2069245900698CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A74D05262069703B00698CAA /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				A74D04F82069245900698CAA /* AppDelegate.swift */,
 				A74D04FA2069245900698CAA /* ViewController.swift */,
 				A74D04FC2069245900698CAA /* Main.storyboard */,
+				A74D05262069703B00698CAA /* AboutViewController.swift */,
 				A74D04FF2069245900698CAA /* Assets.xcassets */,
 				A74D05012069245900698CAA /* LaunchScreen.storyboard */,
 				A74D05042069245900698CAA /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74D05272069703B00698CAA /* AboutViewController.swift in Sources */,
 				A74D04FB2069245900698CAA /* ViewController.swift in Sources */,
 				A74D04F92069245900698CAA /* AppDelegate.swift in Sources */,
 			);
