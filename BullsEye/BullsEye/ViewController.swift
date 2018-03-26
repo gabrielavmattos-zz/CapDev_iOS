@@ -19,14 +19,34 @@ class ViewController: UIViewController {
     var targetValue: Int = 0
     var rounds = 0
     var totalScore: Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addLookInSlider()
         startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    fileprivate func addLookInSlider() {
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal")
+        gameSlider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")!
+        gameSlider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftImage = #imageLiteral(resourceName: "SliderTrackLeft")
+        let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+        gameSlider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        
+        let trackRightImage = UIImage(named: "SliderTrackRight")!
+        let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
+        gameSlider.setMaximumTrackImage(trackRightResizable, for: .normal)
     }
 
     @IBAction func showAlert(_ sender: UIButton) {
