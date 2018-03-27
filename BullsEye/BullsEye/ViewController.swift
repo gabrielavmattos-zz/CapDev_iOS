@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var amountRoundLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    var sliderCurrentValue: Int = 0
+    var sliderCurrentValue: Int = 50
     var targetValue: Int = 0
     var rounds = 0
     var totalScore: Int = 0
@@ -51,11 +51,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert(_ sender: UIButton) {
-        let roundScore = calculateStore()
-        totalScore = totalScore + roundScore
+        let store = calculateStore()
+        totalScore = totalScore + store.roundScore
         let message = "The value of the slider is: \(sliderCurrentValue)" +
-        "\nThe target value is: \(targetValue).\nTotal score is: \(roundScore)"
-        let alert = UIAlertController(title: "Hello Word!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        "\nThe target value is: \(targetValue).\nTotal score is: \(store.roundScore)"
+        let alert = UIAlertController(title: store.title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         let action = UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: { action in
                 self.startNewRound()
@@ -108,11 +108,23 @@ class ViewController: UIViewController {
         scoreLabel.text = String(totalScore)
     }
     
-    func calculateStore() -> Int {
-        let score = abs(targetValue - sliderCurrentValue)
-        
-        return 100 - score
+    func calculateStore() -> (title: String, roundScore: Int) {
+        let difference = abs(targetValue - sliderCurrentValue)
+        let score = 100 - difference
+        var title = ""
+        if difference == 0 {
+            title = "Perfect!"
+        }
+        else if difference < 5 {
+            title = "You almost had it!"
+        }
+        else if difference < 10 {
+            title = "Pretty good!"
+        }
+        else {
+            title = "Not even close..."
+        }
+        return (title, score)
     }
-    
 }
 
