@@ -15,18 +15,20 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureWebView()
+    }
+    
+    fileprivate func configureWebView() {
         if let url = Bundle.main.url(forResource: "BullsEye", withExtension: "html") {
             if let htmlData = try? Data(contentsOf: url) {
                 let baseURL = URL(fileURLWithPath: Bundle.main.bundlePath)
                 webView.load(htmlData, mimeType: "text/html", textEncodingName: "UTF-8", baseURL: baseURL)
             }
         }
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func close(_ sender: Any) {
