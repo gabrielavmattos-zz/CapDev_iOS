@@ -21,7 +21,7 @@ class AboutViewController: UIViewController {
     fileprivate func configureWebView() {
         if let url = Bundle.main.url(forResource: "BullsEye", withExtension: "html") {
             if let htmlData = try? Data(contentsOf: url) {
-                let baseURL = URL(fileURLWithPath: Bundle.main.bundlePath)
+                let baseURL = URL(fileURLWithPath: Bundle.main.bundlePath) 
                 webView.load(htmlData, mimeType: "text/html", textEncodingName: "UTF-8", baseURL: baseURL)
             }
         }
