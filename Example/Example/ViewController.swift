@@ -12,14 +12,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let data = ["Item1", "Item2", "Item3", "Item4", "Item5"]
+    var data: [ItemModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let item1 = ItemModel(text: "Item 1", checked: false)
+        let item2 = ItemModel(text: "Item 2", checked: false)
+        let item3 = ItemModel(text: "Item 3", checked: false)
+        
+        data = [item1, item2, item3]
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextViewController = segue.destination as! NextViewController
+        nextViewController.itemModel = ItemModel(text: "Test", checked: false)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -33,11 +43,10 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! ItemCellTableViewCell
         
         let item = data[indexPath.row]
-        
-        cell.textLabel?.text = item
+        cell.configure(text: item.text)
         
         return cell
     }
@@ -48,6 +57,10 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) -> CGFloat{
+        return 90
     }
 
 }
