@@ -99,13 +99,13 @@
 		A74D0535206ABDAA00698CAA /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				A74D0542206ABDAA00698CAA /* Info.plist */,
 				A74D0536206ABDAA00698CAA /* AppDelegate.swift */,
+				A74D059E206BDB4D00698CAA /* ChecklistItem.swift */,
 				A74D0538206ABDAA00698CAA /* ChecklistViewController.swift */,
-				A74D053A206ABDAA00698CAA /* Main.storyboard */,
 				A74D053D206ABDAA00698CAA /* Assets.xcassets */,
 				A74D053F206ABDAA00698CAA /* LaunchScreen.storyboard */,
-				A74D0542206ABDAA00698CAA /* Info.plist */,
-				A74D059E206BDB4D00698CAA /* ChecklistItem.swift */,
+				A74D053A206ABDAA00698CAA /* Main.storyboard */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";

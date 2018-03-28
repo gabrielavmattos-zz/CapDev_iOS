@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cUR-Ap-GYB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ps-sv-zh3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checklist View Controller-->
+        <!--Checklists-->
         <scene sceneID="41U-8x-YGt">
             <objects>
                 <tableViewController id="cUR-Ap-GYB" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,14 +26,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jU-Do-eRu">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jU-Do-eRu">
+                                            <rect key="frame" x="16" y="11" width="256" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1jU-Do-eRu" firstAttribute="top" secondItem="wcu-4f-cIw" secondAttribute="topMargin" id="0UE-3S-n5h"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1jU-Do-eRu" secondAttribute="trailing" id="1Ir-7h-ZnC"/>
+                                        <constraint firstItem="1jU-Do-eRu" firstAttribute="leading" secondItem="wcu-4f-cIw" secondAttribute="leadingMargin" id="DV1-Rw-tas"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1jU-Do-eRu" secondAttribute="bottom" id="tS0-gn-GrW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -41,10 +47,35 @@
                             <outlet property="delegate" destination="cUR-Ap-GYB" id="HjY-Ad-Jjk"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Checklists" largeTitleDisplayMode="always" id="so6-pS-fus">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gm5-v7-SFS">
+                            <connections>
+                                <action selector="addItem" destination="cUR-Ap-GYB" id="YNH-7D-aRk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ta-FT-0Xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="30"/>
+            <point key="canvasLocation" x="1093.125" y="29.577464788732396"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KmU-Zu-sZV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ps-sv-zh3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pqs-7T-jcU">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cUR-Ap-GYB" kind="relationship" relationship="rootViewController" id="pjC-xc-Gb9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heF-Lf-Ddj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="30"/>
         </scene>
     </scenes>
 </document>
