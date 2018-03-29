@@ -45,6 +45,7 @@ class ChecklistViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .always
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -106,7 +107,14 @@ class ChecklistViewController: UITableViewController {
         
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)        
+        tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
     }
 
 }
