@@ -51,7 +51,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gm5-v7-SFS">
                             <connections>
                                 <action selector="addItem" destination="cUR-Ap-GYB" id="YNH-7D-aRk"/>
-                                <segue destination="TCA-fw-V7u" kind="show" id="cvR-qD-IFT"/>
+                                <segue destination="TCA-fw-V7u" kind="show" identifier="AddItem" id="cvR-qD-IFT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
