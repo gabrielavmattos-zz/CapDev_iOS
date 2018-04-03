@@ -23,15 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func setupNotification() {
         
         var center =  UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) {
-            (granted, error) in
-            if granted {
-                print("We have permission")
-            } else {
-                print("Permission deined")
-            }
-        }
-        
         center.delegate = self
         
         let content = UNMutableNotificationContent()

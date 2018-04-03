@@ -16,6 +16,7 @@
 		A74D0557206ABDAA00698CAA /* ChecklistsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D0556206ABDAA00698CAA /* ChecklistsUITests.swift */; };
 		A74D059F206BDB4D00698CAA /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D059E206BDB4D00698CAA /* ChecklistItem.swift */; };
 		A74D05A7206C3F0C00698CAA /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D05A6206C3F0C00698CAA /* AddItemTableViewController.swift */; };
+		A787FB7320728EF000F39495 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787FB7220728EF000F39495 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A74D0558206ABDAB00698CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A74D059E206BDB4D00698CAA /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		A74D05A6206C3F0C00698CAA /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
+		A787FB7220728EF000F39495 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				A74D0542206ABDAA00698CAA /* Info.plist */,
 				A74D0536206ABDAA00698CAA /* AppDelegate.swift */,
 				A74D059E206BDB4D00698CAA /* ChecklistItem.swift */,
+				A787FB7220728EF000F39495 /* DataModel.swift */,
 				A74D0538206ABDAA00698CAA /* ChecklistViewController.swift */,
 				A74D053D206ABDAA00698CAA /* Assets.xcassets */,
 				A74D053F206ABDAA00698CAA /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A787FB7320728EF000F39495 /* DataModel.swift in Sources */,
 				A74D05A7206C3F0C00698CAA /* AddItemTableViewController.swift in Sources */,
 				A74D0539206ABDAA00698CAA /* ChecklistViewController.swift in Sources */,
 				A74D059F206BDB4D00698CAA /* ChecklistItem.swift in Sources */,

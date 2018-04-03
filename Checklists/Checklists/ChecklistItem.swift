@@ -9,9 +9,17 @@
 import Foundation
 
 class ChecklistItem {
+    
+    var dueDate = Date()
+    var shouldRemind = false
+    var itemID: Int
     var text = ""
     var checked = false
     
+    override init() {
+        itemID = DataModel.nextChecklistItemID()
+        super.init()
+    }
     func toggleChecked() {
         checked = !checked
     }
